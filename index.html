@@ -3,19 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Web App</title>
+  <title>AI Assistant</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="card">
-    <h1>Welcome to My App</h1>
-    <p>This app is running live from GitHub!</p>
-    
-    <div class="counter-box">
-      <span id="counter">0</span>
-      <div class="buttons">
-        <button id="decrement-btn">-</button>
-        <button id="increment-btn">+</button>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h2>🤖 AI Assistant</h2>
+      <button id="settings-btn" title="API Settings">⚙️ Key</button>
+    </header>
+
+    <div id="chat-messages" class="chat-messages">
+      <div class="message ai-message">
+        Hello! I'm your AI assistant. Click the ⚙️ icon to enter your free OpenRouter API key and start chatting!
+      </div>
+    </div>
+
+    <form id="chat-form" class="chat-input-area">
+      <input type="text" id="user-input" placeholder="Type your message..." required autocomplete="off" />
+      <button type="submit" id="send-btn">Send</button>
+    </form>
+  </div>
+
+  <!-- API Key Modal -->
+  <div id="api-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Enter API Key</h3>
+      <p>Get a free key from <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai</a></p>
+      <input type="password" id="api-key-input" placeholder="sk-or-v1-..." />
+      <div class="modal-buttons">
+        <button id="save-key-btn">Save Key</button>
+        <button id="close-modal-btn" class="cancel-btn">Close</button>
       </div>
     </div>
   </div>
